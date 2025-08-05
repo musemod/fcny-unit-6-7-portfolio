@@ -56,7 +56,7 @@ main p {
 h1 {
   display: flex;
   font-size: clamp(1.6rem, 5vw, 2.5rem);
-  padding: 2em;
+  padding: 1em;
   justify-content: center;
   align-items: center;
 }
