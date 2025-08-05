@@ -1,22 +1,51 @@
 /*hero section*/
 /* 
-.hero-sect {
-  display: block;
+
+/* .hero-wrap {
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; */
-/* background-image: url(assets/hero2.png);
-  object-fit: cover; */
-/* border: solid red;
-}  */
-
-.hero-wrap {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
-  border: solid yellow;
-  /* background-image: url(assets/hero2.png);
-  object-fit: cover; */
+  min-width: 560px;
+  max-width: 1080px;  */
+  /* border: solid yellow; */
+  /* background-image: url(assets/hero2.png); */
+  /* object-fit: cover;  
+}*/
+
+
+/*responsive vid container 
+use aspect-ratio for best result*/
+/* margin: 0 auto horizontally centers a block-level element when width or max-width is set.*/
+.vid-bg {
+  position: relative;
+  width: 100%;
+  max-width: 1080px;
+  aspect-ratio: 16 / 9; 
+  height: auto;
+  /* box-sizing: border-box; */
+  margin: 0 auto;
+  border: solid red; 
 }
 
+/*The iframe inside (absolutely positioned) will stay centered inside .vid-bg. */
+/* make sure vid fills entire container*/
+.vid-bg iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  top: 0;
+  left: 0;
+}
+
+
+
+@media (max-width: 430px) {
+  .vid-bg {
+    max-width: 100%;
+    margin: 0 1em;
+    padding: 0;
+    /* 0em for top and bottom, 1em for right, left equal to font size*/
+  }
+}

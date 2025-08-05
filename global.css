@@ -25,16 +25,20 @@ body {
   /*dvh is dynamic viewport height - best for smartphones so users aren’t forced to scroll for extra length at bottom with reg vh. Browser will choose whether vh or dvh is best*/
   min-height: 100dvh;
   width: 100vw;
+  min-width: 320px;
   background-color: var(--primary-color);
   border: solid rgb(255, 119, 0);
-  padding: min (80px, 7%);
+  padding: min (1em, 7%);
 }
 .main-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: min (80px, 7%);
+  /*use margin instead of padding since it's calculated outside of aspect-ratio, even with border-box*/
+  margin: min (1em, 7%);
+  width: 100%;
+  /* max-height: 50em; */
   /*browser will choose either min of 5em or 7% - whichever is smaller*/
   border: solid blue;
 }
@@ -46,6 +50,17 @@ main p {
   max-width: 80ch;
   /*number of characters*/
   padding: 2em;
+}
+
+/* .bottom-sect {
+  display: 
+} */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
@@ -156,6 +171,7 @@ nav a:hover {
 }
 
 
+
 /*for phone screen*/
 
 @media (max-width: 430px) {
@@ -237,4 +253,18 @@ nav a:hover {
   }
 
 
+.main-wrapper {
+  display: flex;
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  /* align-items: flex-start; */
+  min-height: 1em;
+  width: 100%;
+  /* max-height: 50em; */
+  /*browser will choose either min of 5em or 7% - whichever is smaller*/
+  border: solid blue;
 }
+
+}
+
+

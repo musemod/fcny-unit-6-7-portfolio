@@ -1,0 +1,38 @@
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 1em;
+    border: solid red;
+}
+
+.legend-class {
+    margin: 1em;
+}
+
+fieldset {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+    padding: .5em;
+}
+
+.address-class {
+    display: block;
+    min-width: 350px;
+    /* padding: .5em;  */
+    margin: .8em;
+    border: solid yellow;
+}
+
+.address-class p {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    padding: .5em;
+}
+
+.address-class a {
+    color: rgb(4, 164, 250)
+}
+
