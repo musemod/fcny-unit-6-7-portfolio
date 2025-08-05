@@ -171,14 +171,51 @@ nav a:hover {
 }
 
 
+/*use padding inner spacing btwn content and nav edges, rather than margin, which would push entire nav container away from other sections
+padding stays within element's box*/
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  
+  nav {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /*push logo and links to opposite sides, rather than evenly spaced*/
+    padding: 1em;
+  }
+
+  .navbar-left .logo-img {
+    max-width: 18em;
+    padding: 0.25em;
+  }
+
+  nav a {
+    font-size: clamp(1rem, 2vw, 1.6rem);
+    padding: 0.5em;
+  }
+
+  footer {
+    padding: 1em 2em;
+    text-align: center;
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
+  }
+
+  
+  .main-wrapper {
+    margin: 2em 1em;
+    /*shorthand margin values for 2em on top-bottom, 1em for left-right*/
+  }
+
+}
+
+
 
 /*for phone screen*/
-
 @media (max-width: 430px) {
   
  .navbar-left .logo-img {
-    max-width: 3em;
-    min-width: 2em;
+    max-width: 10em;
+    min-width: 7em;
   }
   
   .navbar-right {
@@ -255,14 +292,8 @@ nav a:hover {
 
 .main-wrapper {
   display: flex;
-  /* flex-direction: column; */
-  /* justify-content: center; */
-  /* align-items: flex-start; */
   min-height: 1em;
   width: 100%;
-  /* max-height: 50em; */
-  /*browser will choose either min of 5em or 7% - whichever is smaller*/
-  border: solid blue;
 }
 
 }

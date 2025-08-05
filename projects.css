@@ -1,10 +1,9 @@
 /*projects section*/
 
 .container-fl {
-  min-height: 70em;
-  border: 8px solid purple;
   display: flex;
-  /* flex-direction: column; */
+  border: 8px solid purple;
+  /* flex-direction: row; */
   /*how to center everything*/
   justify-content: center;
   align-items: center;
@@ -13,6 +12,26 @@
   flex-wrap: wrap;
   /* gap: 10px; */
 }
+
+
+/* .box vid-container
+position: relative;
+  width: 100%;
+  max-width: 1080px;
+  aspect-ratio: 16 / 9; 
+  height: auto; */
+  /* box-sizing: border-box; */
+  /* margin: 0 auto; */
+
+  /* .box iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  top: 0;
+  left: 0;
+} */
+
 
 .box {
   display: flex;
@@ -54,6 +73,23 @@
 
 
 
+/*tablets between 769px and 1024px*/
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container-fl {
+    max-width: 90%;
+    min-width: 300px;
+    margin: 0 1em;
+  }
+}
+
+@media (max-width: 430px) {
+  .vid-bg {
+    max-width: 100%;
+    margin: 0 1em;
+    padding: 0;
+    /* margin shorthand values: 0em for top and bottom, 1em for right, left equal to font size*/
+  }
+}
 
 
 /*for phone screen*/
@@ -61,11 +97,10 @@
 @media (max-width: 430px) {
 
   .container-fl {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    max-width: 90%;
+    min-width: 300px;
+    margin: 0 1em;
+    padding: 0;
   }
 
   .box {

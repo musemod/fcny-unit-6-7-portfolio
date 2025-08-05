@@ -40,13 +40,29 @@ use aspect-ratio for best result*/
   left: 0;
 }
 
+/*hierarchy
+ .main-wrapper
+│.vid-bg  (position: relative; aspect-ratio: 16:9)
+│     <iframe> (position: absolute; fills .vid-bg)
+*/
 
+
+/* order of media queries should go from largest to smallest widths */
+/*tablets between 769px and 1024px*/
+@media (min-width: 769px) and (max-width: 1024px) {
+  .vid-bg {
+    max-width: 90%;
+  }
+}
 
 @media (max-width: 430px) {
   .vid-bg {
     max-width: 100%;
     margin: 0 1em;
     padding: 0;
-    /* 0em for top and bottom, 1em for right, left equal to font size*/
+    /* margin shorthand values: 0em for top and bottom, 1em for right, left equal to font size*/
   }
 }
+
+
+
