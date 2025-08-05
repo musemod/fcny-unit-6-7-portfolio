@@ -109,7 +109,7 @@ nav a {
   color: var(--text-dark);
   font-size: clamp(1.3rem, 2.3vw, 2.5rem);
   padding-right: 1em;
-  padding-top: 1em; */
+  padding-top: 1em;
   height: 100%;
 }
 
@@ -272,7 +272,7 @@ nav {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  } 
 
-} 
-
+}
 
