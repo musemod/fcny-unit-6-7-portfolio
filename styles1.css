@@ -88,7 +88,7 @@ nav {
     /* height: 6em; */
 }
 
-.links-container {
+.menu-box {
     display: flex;
     /* flex-direction: row; */
     justify-content: space-evenly;
@@ -120,12 +120,12 @@ nav a:hover {
   border-bottom-left-radius: -0.5em;
 }
 
-#sidebar-active {
+#sb-active {
     display: none;
     /*hide sidebar desktop*/
 }
 
-.open-sidebar-button, .close-sidebar-button {
+.sb-open, .sb-close {
     display: none;
 }
 
@@ -227,7 +227,7 @@ nav {
     z-index: 10; 
 }
 
- .links-container {
+ .menu-box {
     display: none;
     flex-direction: column;
     /* margin-right: auto;  */
@@ -236,17 +236,18 @@ nav {
  }
 
 
- #sidebar-active {
+ #sb-active {
     display: block;
   }
 
- .open-sidebar-button, .close-sidebar-button {
+ .sb-open, .sb-close {
   /* padding: 5px;   */
   display: block;
     
   }
 
-  #sidebar-active:checked ~ .links-container {
+  /*if box is checked then siblings in menu-box*/
+  #sb-active:checked ~ .menu-box {
     display: flex;
   }
 
@@ -258,6 +259,19 @@ nav {
     justify-content: right;
     align-items: flex-end;
   }
+
+  .container-fl {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .box {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 
 } 
 
