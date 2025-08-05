@@ -97,9 +97,7 @@ nav {
     width: 100%;
     padding: 2.5em; */
     /* background-image: url(assets/banners/bknd_media.jpg)  */
-    /*fill entire navbar*/
 }
-
 
 nav a {
   display: flex;
@@ -246,7 +244,7 @@ nav {
     
   }
 
-  /*if box is checked then siblings in menu-box*/
+  /*if box is checked then siblings in menu-box displayed*/
   #sb-active:checked ~ .menu-box {
     display: flex;
   }

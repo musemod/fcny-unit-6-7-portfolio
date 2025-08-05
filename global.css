@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+:root {
+  --primary-color: #11121a;
+  --hover-color: #fdab7f;
+  --accent-color: #0071ff;
+  --text-color: #fdfdfd;
+  --text-dark: #d509ec;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  /*change most default settings. Only special thing here is applied border-box on every element since prevents a lot of problems with padding
+Means that specified width and height of an element include the padding and border, in addition to the content. Padding and border are added to the element's total size.*/
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Quicksand", "Ubuntu", sans-serif;
+  color: var(--text-color);
+}
+
+body {
+  min-height: 100vh;
+  /*dvh is dynamic viewport height - best for smartphones so users aren’t forced to scroll for extra length at bottom with reg vh. Browser will choose whether vh or dvh is best*/
+  min-height: 100dvh;
+  width: 100vw;
+  background-color: var(--primary-color);
+  border: solid rgb(255, 119, 0);
+  padding: min (80px, 7%);
+}
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: min (80px, 7%);
+  /*browser will choose either min of 5em or 7% - whichever is smaller*/
+  border: solid blue;
+}
+
+main p {
+  margin-top: 0.2em;
+  font-size: clamp(0.5rem, 4vw, 1.5rem);
+  /*clamp(min, preferred, max)*/
+  max-width: 80ch;
+  /*number of characters*/
+  padding: 2em;
+}
+
+h1 {
+  display: flex;
+  font-size: clamp(1.6rem, 5vw, 2.5rem);
+  padding: 1em;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  display: flex;
+  font-size: clamp(1rem, 5vw, 2rem);
+  padding-top: 0.5em;
+  padding-left: 0.5em;
+  justify-content: center;
+  align-items: center;
+}
+
+h3 {
+  display: flex;
+  font-size: clamp(0.6rem, 3vw, 1.2rem);
+  padding: 0.5em;
+  justify-content: center;
+  align-items: center;
+}
+
+/* header and navbar */
+
+.top-section {
+  min-height: 33%;
+  border: solid white;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--primary-color);
+  font-weight: bolder;
+  /* height: 6em; */
+}
+
+.navbar-left {
+  float: left;
+}
+
+.navbar-right {
+  float: right;
+}
+
+.navbar-center {
+  margin: 0 auto;
+  /* only works with fixed width for centering*/
+}
+
+.navbar-left .logo-img {
+  height: auto;
+  /*width responsive within the container*/
+  width: 100%;
+  /*set max so not too large on big screens*/
+  max-width: 25em;
+  min-width: 10em;
+  padding: 0.5em;
+  /*no stretching or clipping, maintains proportions*/
+  object-fit: cover;
+}
+
+.navbar-right .menu-box {
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: space-evenly;
+  align-items: center;
+  /* height: 100%;
+    width: 100%;
+    padding: 2.5em; */
+  /* background-image: url(assets/banners/bknd_media.jpg)  */
+  /*fill entire navbar*/
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--text-dark);
+  font-size: clamp(1.3rem, 2.3vw, 2.5rem);
+  padding-right: 1em;
+  padding-top: 1em;
+  height: 100%;
+}
+
+nav a:hover {
+  color: var(--hover-color);
+  border-bottom: 0.2em solid pink;
+  border-bottom-right-radius: 0.8em;
+  border-bottom-left-radius: -0.5em;
+}
+
+.navbar-right #sb-active {
+  display: none;
+  /*hide sidebar desktop*/
+}
+
+.navbar-right .sb-open, .sb-close {
+  display: none;
+}
+
+
+/*for phone screen*/
+
+@media (max-width: 430px) {
+  
+ .navbar-left .logo-img {
+    max-width: 3em;
+    min-width: 2em;
+  }
+  
+  .navbar-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /*navbar will remain on top, even when scrolling*/
+    position: fixed;
+    top: 0;
+    right: 0;
+    /*make sure navbar above other elements*/
+    z-index: 100;
+    background-color: var(--primary-color);
+    padding-left: .05em;
+    padding-bottom: 1em;
+    border-bottom-left-radius: 60em;
+    border-top-left-radius: 200em;
+  }
+
+/*menu hidden by default, but change direction to vertical */
+.navbar-right  .menu-box {
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    margin-top: 1em;
+  }
+
+  /*smoother transition to ease in out sidebar*/
+.navbar-right .menu-box {
+  transition: all 1s ease-in-out;
+}
+
+/*be sure to scope selector to the parent container .navbar-right*/
+.navbar-right #sb-active {
+    display: block;
+  }
+
+ .navbar-right .sb-open {
+    /* padding: 5px;   */
+    display: block;
+  }
+
+ .navbar-right .sb-close {
+    display: none;
+  }
+
+  /* toggle logic */
+  /* before checking box, the .sb-open hamburg icon is visible since display: block was set earlier 
+  /*after box checked, hide hamburg icon */
+.navbar-right  #sb-active:checked ~ .sb-open {
+    display: none;
+  }
+  /* before checking box, the .sb-close X icon is hidden since display: none
+  /*after box is checked, show close icon*/
+.navbar-right  #sb-active:checked ~ .sb-close {
+    display: block;
+  }
+  /*before checking box, .menu-box is hidden since display: none
+  /*after box is checked, show menu-box as flex container, stacked vertically menu-box*/
+ .navbar-right #sb-active:checked ~ .menu-box {
+    display: flex;
+  }
+
+  nav a {
+    /* box-sizing: border-box;
+    height: auto; */
+    width: 100%;
+    padding: 0.5em 1em;
+    justify-content: right;
+    align-items: flex-end;
+  }
+
+
+}

@@ -1,0 +1,22 @@
+/*hero section*/
+/* 
+.hero-sect {
+  display: block;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+/* background-image: url(assets/hero2.png);
+  object-fit: cover; */
+/* border: solid red;
+}  */
+
+.hero-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: solid yellow;
+  /* background-image: url(assets/hero2.png);
+  object-fit: cover; */
+}
+
