@@ -18,6 +18,7 @@ Means that specified width and height of an element include the padding and bord
 html {
   font-family: "Quicksand", "Ubuntu", sans-serif;
   color: var(--text-color);
+  overflow-x: hidden;
 }
 
 body {
@@ -25,10 +26,11 @@ body {
   /*dvh is dynamic viewport height - best for smartphones so users aren’t forced to scroll for extra length at bottom with reg vh. Browser will choose whether vh or dvh is best*/
   min-height: 100dvh;
   width: 100vw;
-  min-width: 320px;
+  min-width: 18.75em;
   background-color: var(--primary-color);
-  border: solid rgb(255, 119, 0);
-  padding: min (1em, 7%);
+  border: solid rgb(34, 255, 0);
+  overflow-x: hidden;
+  padding: min(1.5em, 7%);
 }
 .main-wrapper {
   display: flex;
@@ -36,7 +38,7 @@ body {
   justify-content: center;
   align-items: center;
   /*use margin instead of padding since it's calculated outside of aspect-ratio, even with border-box*/
-  margin: min (1em, 7%);
+  margin: min(1em, 7%);
   width: 100%;
   /* max-height: 50em; */
   /*browser will choose either min of 5em or 7% - whichever is smaller*/
@@ -45,11 +47,24 @@ body {
 
 main p {
   margin-top: 0.2em;
-  font-size: clamp(0.5rem, 4vw, 1.5rem);
+  font-size: clamp(.5rem, 4vw, 1.3rem);
   /*clamp(min, preferred, max)*/
   max-width: 80ch;
   /*number of characters*/
-  padding: 2em;
+  padding: clamp(.5em, 1em, 2em);
+}
+
+p {
+  margin-top: 0.2em;
+  font-size: clamp(.5rem, 3vw, 1rem);
+  /*clamp(min, preferred, max)*/
+  max-width: 80ch;
+  /*number of characters*/
+  padding: clamp(.5em, 1em, 2em);
+}
+
+.smaller-text {
+  font-size: clamp(.8rem, 2vw, 1rem);
 }
 
 /* .bottom-sect {
@@ -66,15 +81,15 @@ footer {
 h1 {
   display: flex;
   font-size: clamp(1.6rem, 5vw, 2.5rem);
-  padding: 1em;
+  padding: clamp(.3em, 1em, 1.5em);
   justify-content: center;
   align-items: center;
 }
 
 h2 {
   display: flex;
-  font-size: clamp(1rem, 5vw, 2rem);
-  padding-top: 0.5em;
+  font-size: clamp(1rem, 5vw, 2.3rem);
+  padding-top: clamp(0.3em, .5em, 1em);
   padding-left: 0.5em;
   justify-content: center;
   align-items: center;
@@ -82,8 +97,8 @@ h2 {
 
 h3 {
   display: flex;
-  font-size: clamp(0.6rem, 3vw, 1.2rem);
-  padding: 0.5em;
+  font-size: clamp(0.6rem, 3.5vw, 2rem);
+  padding: clamp(0.3em, .5em, 1em);
   justify-content: center;
   align-items: center;
 }
@@ -106,28 +121,31 @@ nav {
 }
 
 .navbar-left {
-  float: left;
+  flex: 1 1;
+  border: solid red;
 }
 
 .navbar-right {
-  float: right;
+  flex: 1;
+  border: solid red;
 }
 
 .navbar-center {
-  margin: 0 auto;
+  /* margin: 0 auto; */
   /* only works with fixed width for centering*/
+  flex: 1;
+  border: solid red;
 }
 
 .navbar-left .logo-img {
-  height: auto;
+  height: 100%;
   /*width responsive within the container*/
   width: 100%;
   /*set max so not too large on big screens*/
-  max-width: 25em;
-  min-width: 10em;
-  padding: 0.5em;
+  /* padding: 0.5em;  */
   /*no stretching or clipping, maintains proportions*/
   object-fit: cover;
+  border: solid green;
 }
 
 .navbar-right .menu-box {
@@ -135,9 +153,10 @@ nav {
   /* flex-direction: row; */
   justify-content: space-evenly;
   align-items: center;
-  /* height: 100%;
-    width: 100%;
-    padding: 2.5em; */
+  border: solid lightgreen;
+  height: 100%;
+  width: 100%;
+  /*padding: 2.5em; */
   /* background-image: url(assets/banners/bknd_media.jpg)  */
   /*fill entire navbar*/
 }
@@ -148,9 +167,9 @@ nav a {
   text-decoration: none;
   font-weight: bold;
   color: var(--text-dark);
-  font-size: clamp(1.3rem, 2.3vw, 2.5rem);
-  padding-right: 1em;
-  padding-top: 1em;
+  font-size: clamp(.8rem, 3vw, 4rem);
+  padding-right: .5em;
+  /* padding-top: .5em; */
   height: 100%;
 }
 
@@ -175,57 +194,46 @@ nav a:hover {
 padding stays within element's box*/
 
 
+/*for tablet */
 @media (min-width: 769px) and (max-width: 1024px) {
-  
-  nav {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    /*push logo and links to opposite sides, rather than evenly spaced*/
-    padding: 1em;
-  }
+  p {
+    font-size: clamp(0.8rem, 2vw, 1rem);
 
-  .navbar-left .logo-img {
-    max-width: 18em;
-    padding: 0.25em;
   }
-
-  nav a {
-    font-size: clamp(1rem, 2vw, 1.6rem);
-    padding: 0.5em;
-  }
-
-  footer {
-    padding: 1em 2em;
-    text-align: center;
-    font-size: clamp(0.8rem, 2vw, 1.2rem);
-  }
-
-  
-  .main-wrapper {
-    margin: 2em 1em;
-    /*shorthand margin values for 2em on top-bottom, 1em for left-right*/
-  }
-
 }
 
 
 
 /*for phone screen*/
-@media (max-width: 430px) {
+@media (max-width: 480px) {
   
- .navbar-left .logo-img {
-    max-width: 10em;
-    min-width: 7em;
+nav {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /*push logo and links to opposite sides, rather than evenly spaced*/
+    padding: clamp(0em, 1em, 2em);
   }
-  
+
+  .navbar-left .logo-img {
+    /* max-width: 18em; */
+    padding: (0em, .2em, 1em);
+  }
+
+ 
+  .main-wrapper {
+    margin: .5em .5em;
+    /*shorthand margin values for 2em on top-bottom, 1em for left-right*/
+  }
+
   .navbar-right {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    /*navbar will remain on top, even when scrolling*/
-    position: fixed;
+    /*navbar will remain on top, even when scrolling, but causes space btwn viewport right edge and body container right edge*/
+    /* position: fixed;
     top: 0;
-    right: 0;
+    right: 0; */
+    width: clamp(3em, 20%, 6em);
     /*make sure navbar above other elements*/
     z-index: 100;
     background-color: var(--primary-color);
@@ -241,7 +249,7 @@ padding stays within element's box*/
     flex-direction: column;
     align-items: flex-end;
     width: 100%;
-    margin-top: 1em;
+    /* margin-top: 1em; */
   }
 
   /*smoother transition to ease in out sidebar*/
@@ -284,17 +292,23 @@ padding stays within element's box*/
     /* box-sizing: border-box;
     height: auto; */
     width: 100%;
-    padding: 0.5em 1em;
     justify-content: right;
     align-items: flex-end;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    padding: 0.5em;
   }
 
+  .box .video-wrapper p {
+    font-size: clamp(0.5rem, 3vw, 1rem);
 
-.main-wrapper {
-  display: flex;
-  min-height: 1em;
-  width: 100%;
-}
+  }
+
+  footer {
+    padding: 1em 2em;
+    text-align: center;
+    font-size: clamp(0.5rem, 3vw, 1rem);
+  }
+
 
 }
 

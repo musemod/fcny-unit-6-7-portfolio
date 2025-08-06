@@ -21,7 +21,8 @@ use aspect-ratio for best result*/
   /*position: relative establishes positioning context for child, iframe. This creates a position reference point for any absolutely positioned child elements like iframe. Otherwise,  iframe will position relative to next ancestor that has a positioning context.*/
   position: relative;
   width: 100%;
-  max-width: 1080px;
+  /*1080px in em*/
+  max-width: 67.5em;
   aspect-ratio: 16 / 9; 
   height: auto;
   /* box-sizing: border-box; */

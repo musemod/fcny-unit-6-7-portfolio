@@ -1,8 +1,10 @@
 /*projects section*/
 
 .container-fl {
+  position: relative;
   display: flex;
-  border: 8px solid purple;
+  border: 4px solid purple;
+  padding: clamp(.5em, 1em, 1.5em);
   /* flex-direction: row; */
   /*how to center everything*/
   justify-content: center;
@@ -13,17 +15,63 @@
   /* gap: 10px; */
 }
 
+/*for video and text*/
+.box {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  flex: 1 1;
+}
 
-/* .box vid-container
-position: relative;
+/*container for each video only*/
+.video-wrapper {
+  position: relative;
   width: 100%;
-  max-width: 1080px;
+  /*1080px in em*/
+  max-width: 67.5em;
   aspect-ratio: 16 / 9; 
-  height: auto; */
+  height: auto;
   /* box-sizing: border-box; */
-  /* margin: 0 auto; */
+  margin: 0 auto;
+  border: solid red; 
+  overflow: hidden;
+}
 
-  /* .box iframe {
+/*each video inside the container since YouTube and Vimeo might not respect aspect-ratio*/
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* 
+  .box iframe {
+  width: clamp(20em, 35em, 67.5em);
+  height: auto;
+  aspect-ratio: 16 / 9;
+
+} */
+
+/* .box .img-vid {
+  /*position: relative establishes positioning context for child, iframe. This creates a position reference point for any absolutely positioned child elements like iframe. Otherwise,  iframe will position relative to next ancestor that has a positioning context.*/
+  /* position: relative;
+  width: 100%;
+  max-width: 67.5em;
+  aspect-ratio: 16 / 9;  */
+  /* height: auto; */
+  /* box-sizing: border-box; */
+  /* margin: 0 auto;
+  border: solid red; 
+}  */
+
+/*Position: absolute takes element iframe outside normal flow and positions it exactly relative to its nearest positioned ancestor .vid-bg*/
+/* top, left, width, height values makes sure vid fills entire container*/
+/* .box iframe {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -31,46 +79,6 @@ position: relative;
   top: 0;
   left: 0;
 } */
-
-
-.box {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  /*how to center everything inside each box*/
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  min-height: 23em;
-  max-height: 26em;
-  min-width: 30em;
-  max-width: 50em;
-  /* max-width: 400px; */
-  background: none;
-  font-size: 1.5rem;
-  flex: 1 1;
-  /*flex-grow, flex-shrink, flex-basis*/
-}
-
-/*for img of diff sizes - force imgs to be consistent with same dimensions*/
-
-/* @media (min-width: 768px) and (max-width: 1024px) {
- 
- .links-container {
-    display: flex;
-    flex: wrap;
-    justify-content: flex-end;
-    padding-right: 2.5em;
- }
-
-  nav a {
-    display: flex;
-    flex: wrap;
-    padding-left: 2.5em;
-  }
-
-}  */
-
 
 
 /*tablets between 769px and 1024px*/
@@ -83,24 +91,11 @@ position: relative;
 }
 
 @media (max-width: 430px) {
-  .vid-bg {
-    max-width: 100%;
-    margin: 0 1em;
-    padding: 0;
-    /* margin shorthand values: 0em for top and bottom, 1em for right, left equal to font size*/
-  }
-}
-
-
-/*for phone screen*/
-
-@media (max-width: 430px) {
-
+  
   .container-fl {
-    max-width: 90%;
-    min-width: 300px;
-    margin: 0 1em;
-    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
   }
 
   .box {
