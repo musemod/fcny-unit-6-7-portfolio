@@ -171,7 +171,7 @@ nav a {
   text-decoration: none;
   font-weight: bold;
   color: var(--text-dark);
-  font-size: clamp(.8rem, 3vw, 4rem);
+  font-size: clamp(1rem, 2vw, 4rem);
   padding-right: .5em;
   /* padding-top: .5em; */
   height: 100%;
