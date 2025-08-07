@@ -14,16 +14,20 @@
 * {
   margin: 0;
   padding: 0;
-  /*change most default settings. Can also apply border-box on every element since prevents a lot of problems with padding
-Means that specified width and height of an element include the padding and border, in addition to the content. Padding and border are added to the element's total size.*/
   box-sizing: border-box;
 }
+/*resets defaults so margin / padding NOT included.
+border-box tells the browser to account for any border and padding in the values you specify for an element's width and height. If you set an element's width to 100 pixels, that 100 pixels will include any border or padding you added, and the content box will shrink to absorb that extra width. This typically makes it much easier to size elements.
+Note: It is often useful to set box-sizing to border-box to lay out elements. This makes dealing with the sizes of elements much easier, and generally eliminates a number of pitfalls you can stumble on while laying out your content. On the other hand, when using position: relative or position: absolute, use of box-sizing: content-box allows the positioning values to be relative to the content, and independent of changes to border and padding sizes, which is sometimes desirable.*/
 
 html {
   font-family: "Quicksand", "Ubuntu", sans-serif;
   color: var(--text-color);
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
+
+/* hidden
+Overflow content is clipped if necessary to fit horizontally in the elements' padding box. No scroll bars are provided. */
 
 body {
   min-height: 100vh;
@@ -32,7 +36,7 @@ body {
   width: 100vw;
   min-width: 18.75em;
   background-color: var(--primary-color);
-  border: solid rgb(34, 255, 0);
+  /* border: solid rgb(34, 255, 0); */
   overflow-x: hidden;
   padding: min(1.5em, 7%);
 }
@@ -46,7 +50,7 @@ body {
   width: 100%;
   /* max-height: 50em; */
   /*browser will choose either min of 5em or 7% - whichever is smaller*/
-  border: solid blue;
+  /* border: solid blue; */
 }
 
 main p {
@@ -111,7 +115,7 @@ h3 {
 
 .top-section {
   min-height: 33%;
-  border: solid white;
+  /* border: solid white; */
 }
 
 nav {
@@ -126,19 +130,19 @@ nav {
 
 .navbar-left {
   flex: 1 1;
-  border: solid red;
+  /* border: solid red; */
 }
 
 .navbar-right {
   flex: 1;
-  border: solid red;
+  /* border: solid red; */
 }
 
 .navbar-center {
   /* margin: 0 auto; */
   /* only works with fixed width for centering*/
   flex: 1;
-  border: solid red;
+  /* border: solid red; */
 }
 
 .navbar-left .logo-img {
@@ -149,7 +153,7 @@ nav {
   /* padding: 0.5em;  */
   /*no stretching or clipping, maintains proportions*/
   object-fit: cover;
-  border: solid green;
+  /* border: solid green; */
 }
 
 .navbar-right .menu-box {
@@ -157,7 +161,7 @@ nav {
   /* flex-direction: row; */
   justify-content: space-evenly;
   align-items: center;
-  border: solid lightgreen;
+  /* border: solid lightgreen; */
   height: 100%;
   width: 100%;
   /*padding: 2.5em; */

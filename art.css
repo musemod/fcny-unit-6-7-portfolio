@@ -52,7 +52,7 @@ img {
     grid-template-rows: subgrid;
     /* grid-row: 1 / 4; */
     grid-row: span 3;
-    border: 1px solid lightblue;
+    /* border: 1px solid lightblue; */
     text-align: center;
     padding: 2rem;
 }
