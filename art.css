@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Barrio&family=Jua&family=Montaga&family=Orbitron:wght@400..900&family=Quicksand:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+/*reset box sizing on all elements*/
+/* * ::before,
+* ::after {
+    box-sizing: border-box;
+} */
+
+
+/* The CSS rule *, *::before, *::after { box-sizing: border-box; } is a common practice in web dev to establish consistent and predictable box model across all elements and their pseudo-elements on a web page.
+*::before and *::after (Pseudo-elements): These select the ::before and ::after pseudo-elements of every HTML element. Pseudo-elements are not actual elements in the DOM but are used to insert content before or after an element's content, or to style specific parts of an element. */
+
+/* The margin-inline: auto CSS declaration is used to horizontally center a block-level element within its parent container. */
+/* The margin-inline CSS shorthand property is a shorthand property that defines both the logical inline start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation. */
+
+/* .barriecito-regular {
+  font-family: "Barriecito", system-ui;
+  font-weight: 400;
+  font-style: normal;
+} */
+
+
+body {
+    max-width: 95%;
+    /*margin refers to all sides outside element*/
+    /* margin: 0; */
+    /*center body*/
+    margin-inline: auto;
+
+}
+
+.grid-wrapper {
+    display: grid;
+    /*use repeat() to set pattern: repeat 4 times (could also be auto-fill or auto-fit), track(s) with size value(s) */ 
+    /* grid-template-columns: repeat(4, 1fr); */
+    /* The minmax() CSS function defines a size range greater than or equal to min and less than or equal to max. It is used with CSS grids. */
+     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    /*with subgrid, must explicitly specify grid-template-rows tracks in outer .grid-wrapper. With 3 elements, set auto 3 times*/
+    /* grid-template-rows: auto auto auto; */
+    gap: 1em;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.box {
+    display: grid;
+    /*with subgrid, must explicitly specify grid-template-rows tracks in outer .grid-wrapper*/
+    grid-template-rows: subgrid;
+    /* grid-row: 1 / 4; */
+    grid-row: span 3;
+    border: 1px solid lightblue;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* grid-row: span 3 (Relative Spanning):
+This declaration tells the grid item to span three rows from its starting position. This means the item's end line is dynamically determined based on its start line and the specified span. If the layout of the parent grid changes (e.g., rows are added or removed before the item's start), the item will still correctly span three rows relative to its new starting point. This inherent flexibility makes it more adaptable to different screen sizes or content changes, contributing to a more responsive design.
+grid-row: 1 / 4 (Absolute Line-Based Placement):
+.
+This declaration explicitly places the grid item starting at line 1 and ending at line 4. While this provides precise control over placement, it is less dynamic. If the number of rows in the parent grid changes, or if new rows are inserted or removed, the item's fixed line-based placement might no longer align correctly with the intended layout, potentially breaking the design and requiring manual adjustments. */
+
+.fun-font {
+  font-family: "Jua", sans-serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 2.5rem, 3rem);
+  font-style: normal;
+}

@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Barrio&family=Jua&family=Montaga&family=Orbitron:wght@400..900&family=Quicksand:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
 :root {
   --primary-color: #11121a;
   --hover-color: #fdab7f;
@@ -10,7 +14,7 @@
 * {
   margin: 0;
   padding: 0;
-  /*change most default settings. Only special thing here is applied border-box on every element since prevents a lot of problems with padding
+  /*change most default settings. Can also apply border-box on every element since prevents a lot of problems with padding
 Means that specified width and height of an element include the padding and border, in addition to the content. Padding and border are added to the element's total size.*/
   box-sizing: border-box;
 }
