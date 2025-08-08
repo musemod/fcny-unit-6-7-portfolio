@@ -4,7 +4,7 @@
     /* justify-content: center; */
     align-items: center;
     padding: 1em;
-    /* border: solid red; */
+    border: solid red;
 }
 
 .legend-class {
@@ -24,7 +24,7 @@ fieldset {
     min-width: 350px;
     /* padding: .5em;  */
     margin: .8em;
-    /* border: solid yellow; */
+    border: solid yellow;
 }
 
 .address-class p {

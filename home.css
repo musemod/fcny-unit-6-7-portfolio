@@ -27,7 +27,7 @@ use aspect-ratio for best result*/
   height: auto;
   /* box-sizing: border-box; */
   margin: 0 auto;
-  /* border: solid red;  */
+  border: solid red; 
 }
 
 /*Position: absolute takes element iframe outside normal flow and positions it exactly relative to its nearest positioned ancestor .vid-bg*/

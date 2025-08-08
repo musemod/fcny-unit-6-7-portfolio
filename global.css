@@ -26,9 +26,6 @@ html {
   /* overflow-x: hidden; */
 }
 
-/* hidden
-Overflow content is clipped if necessary to fit horizontally in the elements' padding box. No scroll bars are provided. */
-
 body {
   min-height: 100vh;
   /*dvh is dynamic viewport height - best for smartphones so users aren’t forced to scroll for extra length at bottom with reg vh. Browser will choose whether vh or dvh is best*/
@@ -40,6 +37,12 @@ body {
   overflow-x: hidden;
   padding: min(1.5em, 7%);
 }
+
+/* hidden
+Overflow content is clipped if necessary to fit horizontally in the elements' padding box. No scroll bars are provided. */
+  /*browser will choose either min of 5em or 7% - whichever is smaller*/
+
+
 .main-wrapper {
   display: flex;
   flex-direction: column;
@@ -49,8 +52,7 @@ body {
   margin: min(1em, 7%);
   width: 100%;
   /* max-height: 50em; */
-  /*browser will choose either min of 5em or 7% - whichever is smaller*/
-  /* border: solid blue; */
+  border: solid blue;
 }
 
 main p {
@@ -115,34 +117,35 @@ h3 {
 
 .top-section {
   min-height: 33%;
-  /* border: solid white; */
+  border: solid white;
 }
 
 nav {
   display: flex;
-  flex-direction: row;
+  flex-direction: row;  
   justify-content: space-evenly;
   align-items: center;
   background-color: var(--primary-color);
   font-weight: bolder;
+  border: solid orangered;
   /* height: 6em; */
 }
 
 .navbar-left {
   flex: 1 1;
-  /* border: solid red; */
+  border: solid red;
 }
 
 .navbar-right {
   flex: 1;
-  /* border: solid red; */
+  border: solid red;
 }
 
 .navbar-center {
   /* margin: 0 auto; */
   /* only works with fixed width for centering*/
   flex: 1;
-  /* border: solid red; */
+  border: solid red;
 }
 
 .navbar-left .logo-img {
@@ -153,7 +156,7 @@ nav {
   /* padding: 0.5em;  */
   /*no stretching or clipping, maintains proportions*/
   object-fit: cover;
-  /* border: solid green; */
+  border: solid green;
 }
 
 .navbar-right .menu-box {
@@ -161,7 +164,7 @@ nav {
   /* flex-direction: row; */
   justify-content: space-evenly;
   align-items: center;
-  /* border: solid lightgreen; */
+  border: solid lightgreen;
   height: 100%;
   width: 100%;
   /*padding: 2.5em; */
